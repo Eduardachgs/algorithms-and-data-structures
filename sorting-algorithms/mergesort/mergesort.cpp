@@ -18,7 +18,7 @@ void merge(int array[], int left, int mid, int right){
     y = 0;
     z = left;
 
-    while(x < sub1 and y < sub2)
+    while(x < sub1 && y < sub2)
     {
         if (First[x] <= Second[y])
         {

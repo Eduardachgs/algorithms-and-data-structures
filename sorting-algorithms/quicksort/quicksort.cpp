@@ -1,11 +1,5 @@
 #include <iostream>
 
-void printArray(int array[], int size){
-    for (int k=0; k < size; k++)
-        std::cout << array[k] << " ";
-        std::cout << std::endl;
-}   
-
 // hoare partition
 int partition(int a[], int low, int high)
 {
@@ -43,6 +37,12 @@ void quickSort(int array[], int begin, int end){
         quickSort(array, p+1, end); // right partition
     }
 }
+
+void printArray(int array[], int size){
+    for (int k=0; k < size; k++)
+        std::cout << array[k] << " ";
+        std::cout << std::endl;
+}   
 
 int main(){
     int array[] = {7, 23, 0, 6, 1, 456, 22, 3};
