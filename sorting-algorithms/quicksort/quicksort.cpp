@@ -1,39 +1,26 @@
 #include <iostream>
 
 // hoare partition
-int partition(int array[], int start, int end){
-    int pivot = array[start]; // our pivot will be the first element
-
-    int i = start+1; // first element after the pivot
-    int j = end;       // last element of the array
-    while (i <= j)
+int partition(int a[], int low, int high)
+{
+    int pivot = a[low];
+    int i = low - 1;
+    int j = high + 1;
+    while (1)
     {
-        while (array[i] <= pivot)
-        {
-            i++; // keep moving our start index while the elements are smaller than our pivot
+        do {
+            i++;
+        } while (a[i] < pivot);
+ 
+        do {
+            j--;
+        } while (a[j] > pivot);
+ 
+        if (i >= j) {
+            return j;
         }
-        while (array[j] >= pivot)
-        {
-            j--; // keep moving our end index while the elements are greater than our pivot
-        }
-
-        if (i <= j)
-        {            
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-        i++;
-        j--;
-        }
-
+        std::swap(a[i], a[j]);
     }
-
-    int temp = array[start];
-    array[start] = array[j];
-    array[j] = temp;
-
-    return j; 
-
 }
 
 void quickSort(int array[], int begin, int end){
