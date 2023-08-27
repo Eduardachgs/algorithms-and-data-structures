@@ -6,15 +6,20 @@ class Graph {
         int** adjMatrix; //ponteiro para ponteiro de bool
         int numVertices;
         bool *mark;
+        //toposort
+        std::priority_queue<int, std::vector<int>, std::greater<int>> fila;
+        int *dp;
 
     public:
         Graph(int numVertices) {
             this->numVertices = numVertices;
             mark = new bool[numVertices];
+            dp = new int[numVertices];
             adjMatrix = new int *[numVertices]; //array de ponteiros para bool
 
             for (int i=0; i<numVertices; i++) {
                 adjMatrix[i] =  new int[numVertices];
+                dp[i] = 0;
 
                 for (int j=0; j<numVertices; j++) {
                     adjMatrix[i][j] = 0;
@@ -119,6 +124,44 @@ class Graph {
                 //posvisit
             }
         }
+
+        void toposort() {
+            for (int i=0; i<numVertices; i++) {
+                if (dp[i] == 0) {
+                    fila.push(i);
+                }
+            }
+
+            int cont =0;
+            std::vector<int> ordem;
+
+            while (!fila.empty()) {
+                int u = fila.top();
+                fila.pop();
+                ordem.push_back(u);
+
+                for (int t=0; t<numVertices; t++) {
+                    if (adjMatrix[u][t] != 0) {
+                        dp[t]--;
+
+                        if (dp[t] == 0) {
+                            fila.push(t);
+                        }
+                    }
+                }
+                cont++;
+            }
+
+            if (cont != numVertices) {
+                std::cout << "Sandro fails.";
+                return;
+            }
+
+            for (int i=0; i<ordem.size(); i++) {
+                std::cout << ordem[i]+1 << " ";
+            }
+
+        }        
 
         /* bfs shortest path
         void bfs(int start, int end) {
