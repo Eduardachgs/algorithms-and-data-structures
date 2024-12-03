@@ -5,6 +5,7 @@ using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
     map<string, int> mapa;
 
@@ -15,5 +16,4 @@ int main() {
     for (auto [key, value] : mapa)
         cout << key << " - " << value << endl;
 
-    cin.tie(NULL);
 }

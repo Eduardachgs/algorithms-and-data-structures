@@ -6,10 +6,10 @@ using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
     unordered_map<string, int> mapa;
     unordered_multiset<int> ms;
     unordered_set<int> s;
 
-    cin.tie(NULL);
 }

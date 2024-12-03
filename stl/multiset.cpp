@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
     multiset<int> ms;
 
@@ -17,12 +18,11 @@ int main() {
 
     bool esta = ms.find(2) != ms.end(); // find retorna um ponteiro, retorna para end caso o elemento nao exista
 
-    // conta quantas vezes um elemento aparecer (nao usar, O(N))
+    // conta quantas vezes um elemento aparece (nao usar, O(N))
     int qtd = ms.count(9);
 
     // apagar elemento
     ms.erase(ms.find(3));
     ms.erase(9); // apaga todas as ococrrencias desse elemento
 
-    cin.tie(NULL);
 }

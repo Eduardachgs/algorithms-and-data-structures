@@ -5,6 +5,7 @@ using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
     deque<int> dq;
 
@@ -19,5 +20,4 @@ int main() {
     // pode ser acessado como um array
     dq[0] = 12;
 
-    cin.tie(NULL);
 }

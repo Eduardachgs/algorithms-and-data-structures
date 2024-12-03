@@ -5,6 +5,7 @@ using namespace std;
 // O(log n)
 int main() {
     ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
     set<int> conjunto;
 
@@ -20,5 +21,4 @@ int main() {
     // apaga um elemento do conjunto
     conjunto.erase(1);
 
-    cin.tie(NULL);
 }

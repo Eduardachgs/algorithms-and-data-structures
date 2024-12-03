@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
     pair <int, int> p = {9, 0};
     pair<int, string> p2 = {8, "oi"};
@@ -15,5 +16,4 @@ int main() {
 
     auto [f, s] = p;
 
-    cin.tie(NULL);
 }

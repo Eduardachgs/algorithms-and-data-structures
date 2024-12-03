@@ -2,10 +2,11 @@
 using namespace std;
 
 // priority queue sempre mantem o elemento de maior prioridade no topo
-// complexidade: O(loh n)
+// complexidade: O(log n)
 
 int main() {
     ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
     priority_queue<int> pq;
 
@@ -21,5 +22,4 @@ int main() {
 
     cout << maior;
 
-    cin.tie(NULL);
 }
