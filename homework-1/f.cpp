@@ -6,17 +6,28 @@ int main() {
     cin.tie(NULL);
     int n, num, w;
     int max = 0;
-    unordered_map<int, int> m;
+    set<int> s;
 
     cin >> n;
+    w = 0;
 
+    vector<int> v;
     for (int i=0; i<n; i++) {
         cin >> num;
-        if ()
-    }
+        if (s.find(num) != s.end()) {
+            while (v[w] != num) {
+                s.erase(v[w]);
+                w++;
+            }
+            w++;
+        }
 
-    if(s.size() > max) {
-        max = s.size();
-    }
+        v.push_back(num);
+        s.insert(num);
+
+        if ((v.size() - w) > max) {
+            max = v.size() - w;
+        }
+    }   
     cout << max;
 }
